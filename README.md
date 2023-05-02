@@ -18,13 +18,15 @@ To use the application, type in the following commands in GNU/Linux terminal.
 sudo apt install git
 git clone https://github.com/11Delsy11/WiFiJammer.git
 cd WiFiJammer
+pip install -r requirements.txt
 bash b.sh
 ```
 
 ## Usage
 
-1. find the name of your wifi interface using `cat /proc/net/wireless | perl -ne '/(\w+):/ && print $1'`
-2. put your wifi in monitoring mode using `airmon-ng start <your interface>`
+0. kill network-manager process ` airmon-ng check kill `
+1. find the name of your wifi interface `cat /proc/net/wireless | perl -ne '/(\w+):/ && print $1'`
+2. put your wifi in monitoring mode `airmon-ng start <your interface>`
 3. scan all the nearby APs with airmon-ng and save them in a csv file ` airodump-ng <your interface> -w <file name> --output-format csv ` 
 4. now you can run file with `python3 WiFiJammer.py -a <your csv file address> -NC <your interface>`
 
