@@ -27,7 +27,7 @@ bash b.sh
 0. kill network-manager process ` airmon-ng check kill `
 1. find the name of your wifi interface `cat /proc/net/wireless | perl -ne '/(\w+):/ && print $1'`
 2. put your wifi in monitoring mode `airmon-ng start <your interface>`
-3. scan all the nearby APs with airmon-ng and save them in a csv file ` airodump-ng <your interface> -w <file name> --output-format csv ` 
+3. scan all the nearby APs with airmon-ng and save them in a csv file ` airodump-ng <your interface+ mon> -w <file name> --output-format csv ` 
 4. now you can run file with `python3 WiFiJammer.py -a <your csv file address> -NC <your interface>`
 
 * you can use -h argument for more info
